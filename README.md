@@ -9,4 +9,4 @@ Demo project and exercises in webdev19i Database classes
 
 
 
-&copy; clbo@kea.dk
+&copy; clbo@kea.dk, 25-10-2019
