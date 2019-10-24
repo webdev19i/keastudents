@@ -29,7 +29,7 @@ $result = $students->list();
                     <th>CPR</th>
                     <th></th>
                 </tr>
-                
+
                 <?php
 
                 foreach ($result as $val) {
@@ -40,22 +40,12 @@ $result = $students->list();
                     echo "<td>" . $val[2] . "</td>";
                     echo "<td>" . $val[3] . "</td>";
                     echo "<td>" . $val[4] . "</td>";
-                    echo "<td style='text-align: right'> <a class='btn btn-primary' href='view_student.php?id=" . $val[0] ."'>View</a> <a class='btn btn-danger' href='delete_student.php?id=" . $val[0] ."'>Delete</a> <a class='btn btn-primary' href='edit_student.php?id=" . $val[0] ."'>Edit</a> </td>";
+                    echo "<td style='text-align: right'> <a class='btn btn-primary' href='view_student.php?id=" . $val[0] . "'>View</a> 
+                    <a class='btn btn-danger' href='delete_student.php?id=" . $val[0] . "'>Delete</a> 
+                    <a class='btn btn-primary' href='edit_student.php?id=" . $val[0] . "'>Edit</a> </td>";
                     echo "</tr>";
-                } 
+                }
 
-
-                /* Loop through the result from DB */
-/*                for ($x = 0; $x < count($result); $x++) {
-                    echo "<tr>";
-                    echo "<td>" . $result[$x][0] . "</td>";
-                    echo "<td>" . $result[$x][1] . "</td>";
-                    echo "<td>" . $result[$x][2] . "</td>";
-                    echo "<td>" . $result[$x][3] . "</td>";
-                    echo "<td>" . $result[$x][4] . "</td>";
-                    echo "<td style='text-align: right'> <a class='btn btn-primary' href='view_student.php?id=" . $result[$x][0] ."'>View</a> <a class='btn btn-danger' href='delete_student.php?id=" . $result[$x][0] ."'>Delete</a> <a class='btn btn-primary' href='edit_student.php?id=" . $result[$x][0] ."'>Edit</a> </td>";
-                    echo "</tr>";
-                } */
                 ?>
             </table>
         </div>

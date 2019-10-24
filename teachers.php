@@ -17,7 +17,7 @@
         <div class="row top-buffer">
             <h1>Teachers</h1>
 
-            <div class="alert alert-success">TASK: Show list of all Teachers like you see it in the <a href="students.php">students.php</a> page. And with a "View", "Edit", "Delete" functionality. "View" should show details and a list of all course the teacher teaches.</div>
+            <div class="alert alert-success">TASK: Show list of all Teachers like you see it in the <a href="students.php">students.php</a> page. And with a "View", "Edit", "Delete" functionality. "View" should show details and a list of all course the teacher teaches and you should be able to add the taecher to a course.</div>
             
 
 

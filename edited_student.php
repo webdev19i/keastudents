@@ -8,11 +8,15 @@ require_once(dirname(__FILE__) . '/includes/header.php');
 require_once(dirname(__FILE__) . '/includes/Students_class.php');
 $students = new Students();
 
-// Get id from parameter in URL
-$id = $_GET["id"];
+// Get id from POST 
+$id = $_POST["id"];
+$fname = $_POST["firstname"];
+$lname = $_POST["lastname"];
+$email = $_POST["email"];
+$cpr = $_POST["cpr"];
 
-// Call delete method in $students object
-$students->delete($id);
+// Call update method in $students object
+$students->update($id, $fname, $lname,$email, $cpr);
 ?>
 
 <body>
@@ -23,7 +27,7 @@ $students->delete($id);
     ?>
     <div class="container">
         <div class="row top-buffer">
-            <p id="msg" class="alert alert-success">Thank you, student is deleted</p>
+            <p class="alert alert-success">Thank you, student is updated</p>
         </div>
     </div>
 
