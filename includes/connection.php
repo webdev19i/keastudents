@@ -27,8 +27,8 @@
             ];
 
             try {
-                $connections_to_db = @new PDO($DSN, $user, $pwd, $options); 
-            } catch (\PDOException $oException) {
+                $connections_to_db = new PDO($DSN, $user, $pwd, $options); 
+            } catch (PDOException $e) {
                 echo 'Connection unsuccessful';
                 die('Connection unsuccessful: ' . $connections_to_db->connect_error());
                 exit();
@@ -46,4 +46,3 @@
             $conobj = null;
         }
     }
-?>

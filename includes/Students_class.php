@@ -24,11 +24,9 @@ class Students
         if ($con) {
             $results = array();
 
-            //$query = 'SELECT * FROM students ORDER BY first_name';
             $stmt = $con->prepare("SELECT * FROM students ORDER BY first_name");
             $stmt->execute();
 
-            //$stmt = $con->query($query);
             while ($row = $stmt->fetch())
                 $results[] = [$row["students_id"], $row["first_name"], $row["last_name"], $row["email"], $row["cpr"]];
 
@@ -215,14 +213,16 @@ class Students
             $stmt = $con->prepare("SELECT * FROM students WHERE students_id = :id");
             $stmt->bindParam(':id', $id);
             $stmt->execute();
+            $row = $stmt->fetch();
 
-            while ($row = $stmt->fetch()) {
-                $result = [$row["students_id"], $row["first_name"], $row["last_name"], $row["email"], $row["cpr"]];
-            }
+           // while ($row = $stmt->fetch()) {
+           //     $result = [$row["students_id"], $row["first_name"], $row["last_name"], $row["email"], $row["cpr"]];
+           // }
             $stmt = null;
             $db->disconnect($con);
 
-            return $result;
+            return $row;
+           // return $result;
         } else { }
     }
 }
