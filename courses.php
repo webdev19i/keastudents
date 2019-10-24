@@ -18,6 +18,7 @@
             <h1>Courses</h1>
             <div class="alert alert-success">TASK: Show list of all Courses like you see it in the <a href="students.php">students.php</a> page. And with a "View", "Edit", "Delete" functionality. "View" should show details including teacher at the course, and all enrolled students.</div>
             
+            
         </div>
     </div>
 </body>
