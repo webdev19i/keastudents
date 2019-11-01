@@ -24,7 +24,7 @@ class Students
         if ($con) {
             $results = array();
 
-            $stmt = $con->prepare("SELECT * FROM students ORDER BY first_name");
+            $stmt = $con->prepare("CALL GetStudents()   -- SELECT * FROM students ORDER BY first_name");
             $stmt->execute();
 
             while ($row = $stmt->fetch())
@@ -54,7 +54,9 @@ class Students
         if ($con) {
 
             $results = array();
-            $stmt = $con->prepare("SELECT students.*, courses.*, courses_students.grade FROM students" .
+            $stmt = $con->prepare("CALL GetStudentsAndEnrollments(:id)
+            
+            -- SELECT students.*, courses.*, courses_students.grade FROM students" .
                 " LEFT JOIN courses_students ON students.students_id = courses_students.fk_students" .
                 " LEFT JOIN courses ON courses.courses_id = courses_students.fk_courses" .
                 " WHERE students.students_id = :id");
@@ -87,7 +89,9 @@ class Students
         $con = $db->connect();
         if ($con) {
 
-            $stmt = $con->prepare("UPDATE courses_students SET grade = :grade WHERE fk_students = :sid AND fk_courses = :cid");
+            $stmt = $con->prepare(" CALL GradeStudent(:sid, :cid, :grade)
+            
+            -- UPDATE courses_students SET grade = :grade WHERE fk_students = :sid AND fk_courses = :cid");
             $stmt->bindParam(':sid', $id);
             $stmt->bindParam(':cid', $cid);
             $stmt->bindParam(':grade', $grade);
